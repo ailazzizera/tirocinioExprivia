@@ -4,9 +4,9 @@ import os
 
 client = ollama.Client()
 
-model = "mistral"
-prompt = "Come ti chiami?"
-#prompt = input("Prompt: ")
+model = "mistral"  # Modifica questo per cambiare il modello
+#prompt = "Come ti chiami?"
+prompt = input("Prompt: ")
 
 response = client.generate(model=model, prompt=prompt)
 

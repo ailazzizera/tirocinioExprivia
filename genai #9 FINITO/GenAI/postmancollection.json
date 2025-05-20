@@ -1,0 +1,30 @@
+{
+  "info": {
+    "name": "Ollama AI API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "POST - Invia Prompt",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"prompt\": \"Qual è la capitale della Francia?\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/ai/prompt",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "ai", "prompt"]
+        }
+      }
+    }
+  ]
+}

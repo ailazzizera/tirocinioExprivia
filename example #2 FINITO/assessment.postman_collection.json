@@ -1,0 +1,85 @@
+{
+  "info": {
+    "name": "Assessment API Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET - All Assessments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/assessments",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "assessments"]
+        }
+      }
+    },
+    {
+      "name": "GET - Assessment by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/assessments/{{assessmentId}}",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "assessments", "{{assessmentId}}"]
+        }
+      }
+    },
+    {
+      "name": "POST - Create Assessment",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"assessmentName\": \"New Assessment\",\n    \"surveys\": [\n        { \"name\": \"Survey A\" },\n        { \"name\": \"Survey B\" }\n    ],\n    \"tools\": [\n        { \"name\": \"Tool X\" },\n        { \"name\": \"Tool Y\" }\n    ],\n    \"engine\": { \"name\": \"Engine 1\" }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/assessments",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "assessments"]
+        }
+      }
+    },
+    {
+      "name": "PUT - Update Assessment",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"assessmentId\": \"<Inserire ID assessment da modificare>\",\n    \"assessmentName\": \"Updated Assessment\",\n    \"surveys\": [\n        { \"name\": \"Survey Updated\" }\n    ],\n    \"tools\": [\n        { \"name\": \"Tool Updated\" }\n    ],\n    \"engine\": { \"name\": \"Engine Updated\" }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/assessments",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "assessments"]
+        }
+      }
+    },
+    {
+      "name": "DELETE - Delete Assessment",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/assessments/{{assessmentId}}",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "assessments", "{{assessmentId}}"]
+        }
+      }
+    }
+  ]
+}
